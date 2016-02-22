@@ -1,0 +1,1126 @@
+// SASS Set Up
+
+@import "_setup.scss";
+
+// COLOURS
+
+$green: #0CE682;
+$grey:#1a171a;
+$greyText:rgba(255,255,255,0.56);
+$otherGrey:rgba(26, 23, 26, 0.5607840000000001);
+$lineColorDark:rgba(26, 23, 26, 0.08);
+$lineColorLight:rgba(255,255,255,0.2);
+
+$startColor:#3ae77e;
+$endColor:#39e364;
+
+
+
+// FONTS
+
+$titleText:"PT Sans", sans-serif;
+
+$descriptiveText:"Roboto", sans-serif;
+
+$otherText:"Poppins", sans-serif;
+
+// BASE STYLES
+
+.site-wrapper{
+	max-width: 1080px;
+	margin:auto;
+}
+
+html{
+	font-size: 62.5%;
+}
+
+ul{
+	list-style:none;
+	margin:0;
+	padding:0;
+	li{
+		margin:0;
+		padding:0;
+	}
+}
+
+h2{
+	font-family: $titleText;
+	text-transform: uppercase;
+}
+
+a{
+	text-decoration: none;
+	font-family: $otherText;
+	text-transform: uppercase;
+}
+
+
+// REPEATED STYLES/ELEMENTS
+
+.ep-info{
+	display: flex;
+	justify-content: space-between;
+	color:$green;
+	p{
+		padding:1rem;
+		text-transform: uppercase;
+		font-size: 1.6rem;
+		font-family: $descriptiveText;
+	}
+}
+
+.ep-date{
+	padding:1rem;
+	text-transform: uppercase;
+	font-size: 1.6rem;
+	color:#fff;
+	font-family: $descriptiveText;
+
+}
+
+.line{
+	width:100%;
+	border:4px solid $lineColorLight;
+	border-radius: 10px;
+	margin-top: 1rem;
+}
+
+nav .hamburger{
+	font-size: 3.5rem;
+	text-align: center;
+	display:none;
+}
+
+
+// FORM BASE STYLES
+
+select{
+	border:none;
+	appearance:none;
+}
+
+select:focus{
+	border:none;
+	appearance:none;
+
+}
+
+
+// HEADER STYLES
+
+header{
+	background-image:url(../assets/hero.jpg);
+	height:100vh;
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+.crown{
+	width:100%;
+	padding-top: 4rem;
+	border-bottom:1px solid rgba(255,255,255,0.2);
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+	ul{
+		padding: 2rem 0;
+		display:flex;
+		li{
+			padding:1rem;
+			font-size: 1.2rem;
+		}
+		a{
+			color:#fff;
+		}
+	}
+}
+
+.hero-logo-container{
+	display:flex;
+	img{
+		margin:0 auto;
+	}
+}
+
+
+.episode-play{
+	display:flex;
+	align-items:center;
+	margin-left: 10px;
+
+	i{
+		font-size: 2rem;
+		color:$green;
+	}
+	a{
+		color:$green;
+		font-size: 1.4rem;
+		margin-left: 8px;
+		font-family: $otherText;
+		font-style: none;
+	}
+}
+
+li.special{ 
+	margin-left: 15%;
+	border:2px solid white;
+	padding:5px;
+}
+
+a:visited{
+	color:#fff;
+}
+
+.hero-content{
+	height:70vh;
+	margin:10% auto;
+	display:flex;
+	align-items:flex-start;
+	justify-content:space-between;
+	.hero-one, .hero-two{
+		width: 40%;
+	}
+}
+
+.subscribe-button{
+	width:30%;
+	background-color:$green;
+	color:#fff;
+	font-family: $otherText;
+	text-transform: uppercase;
+	text-align: center;
+	font-size: 1.4rem;
+	letter-spacing: 1.5px;
+	border-radius:15px;
+
+}
+ 
+.hero1-flex-container{
+	padding:5rem 0;
+	display:flex;
+	align-items:center;
+	ul{
+		display:flex;
+		padding-left: 2rem;
+		a{
+			color:#fff;
+			font-size: 2.4rem;
+			padding:1rem;
+		}
+	}
+}
+.site-description p{
+	font-family: $titleText;
+	font-size: 3rem;
+	color:rgba(217, 217, 217,0.7);
+}
+p.live{
+	font-size: 2rem;
+	color:rgba(217, 217, 217,0.95);
+	border-bottom: 2px solid rgba(217,217,217,0.8);
+	padding:3.5rem 0;
+}
+
+.hero-two{
+	display:flex;
+	flex-direction:column;
+	// flex-wrap:wrap;
+}
+
+.ep-title{
+	color:#fff;
+	font-size: 3rem;
+}
+
+.ep-description{
+	font-family: $descriptiveText;
+	color:#fff;
+	font-size: 1.8rem;
+}
+
+// PLAYER STYLES
+
+audio{
+	display:none;
+}
+
+.audiojs {
+	display:flex;
+    width: 460px;
+    height: 36px;
+    overflow: hidden;
+    font-family: monospace;
+    font-size: 12px;
+    background-image:none;
+    background:none;
+    margin:auto;
+    border-left:1px solid #343434;
+    border-right: 1px solid #343434;
+    .time{
+    float: left;
+    height: 36px;
+    line-height: 36px;
+    margin: 0px 0px 0px 6px;
+    padding:none;
+    border:none;
+    color:black;
+    text-shadow:none;
+    em.played{
+    	color:$green;
+    }
+    strong.duration{
+    	display:none;
+    }
+    }
+
+    .scrubber{
+    	border:none;
+    	background:#343434;
+    	height:3px;
+    	top:6px;
+
+    }
+    .progress{
+    	background-image: none;
+    	background:$green;
+    	height:3px;
+
+    }
+}
+
+.audiojs div.play-pause {
+	margin:0px 15px;
+	border-right: 1px solid #343434;
+	padding:4px 0;
+
+	.play{
+		background-image: url("../assets/play.png");
+		background-repeat: no-repeat;
+		background-position:0px 5px;
+	}
+	
+}
+
+
+// BROWSE STYLES
+
+.play-bar{
+	width:100%;
+	background:black;
+	padding: 2rem;
+	display:flex;
+	audio{
+		margin:auto;
+	}
+}
+
+.browse-episodes{
+	background: $grey;
+	padding-bottom: 5rem;
+	}
+	.section-start{
+		display:flex;
+		justify-content:flex-start;
+		align-items:center;
+		padding:3rem;
+		h2{
+			color:#fff;
+			font-size: 2.1rem;
+		}	
+}
+
+.episode-selection{
+	width:80%;
+	margin:auto;
+	padding-bottom: 5%;
+	display:flex;
+	flex-wrap:wrap;
+	li{
+		width:calc(50% - 2rem);
+		margin:1rem;
+		height:350px;
+		position:relative;
+
+		>div{
+			position:absolute;
+			padding:1rem;
+			top:0;
+			bottom:0;
+			right:0;
+			left:0;
+		}
+	}
+}
+
+select{
+	background-color: $grey;		
+	font-family: $titleText;
+	text-transform: uppercase;
+	color:#fff;
+	border-radius:0;
+	border-bottom: 2px solid $green;
+
+}
+
+form{
+	padding-left: 30%;
+}
+
+.section-title{
+	padding-left: 10%;
+}
+// BACKGROUND IMAGES FOR EACH EPISODE DIV
+
+
+
+.episode1{
+	background:url(../assets/podcast-1.jpg)center center no-repeat;
+	background-size:cover;
+}
+.episode2{
+	background:url(../assets/podcast-2.jpg)center center no-repeat;
+	background-size:cover;
+}
+.episode3{
+	background:url(../assets/podcast-3.jpg)center center no-repeat;
+	background-size:cover;
+}
+.episode4{
+	background:url(../assets/podcast-4.jpg) center center no-repeat;
+	background-size:cover;
+}
+.episode5{
+	background:url(../assets/podcast-5.jpg)center center no-repeat;
+	background-size:cover;
+}
+.episode6{
+	background: url(../assets/podcast-6.jpg) center center no-repeat;
+	background-size:cover;
+}
+
+
+.load-more {
+	margin:0 auto;
+	font-size: 1.5rem;
+	font-family: $otherText;
+	text-align: center;
+	letter-spacing: 4px;
+	padding:1rem;
+	width:80%;
+	background: #343434;
+	color:#fff;
+}
+
+// ABOUT-US STYLES
+
+div.line-dark{
+	max-height: 0px;
+	width:90%;
+	border:4px solid $lineColorDark;
+	border-radius: 10px;
+	margin-top: 1rem;
+
+}
+
+.about-title{
+	font-family: $titleText;
+	color:$grey;
+	font-size: 3.2rem;
+	margin-left: 5%;
+}
+.about-wrapper{
+	display:flex;
+	flex-direction:column;
+	width:100%;
+	margin:0 auto;
+	.about-vic{
+		>.bio{
+			order:-1;
+		}		
+	}
+
+	div{
+		display:flex;
+		flex:1 0 50%;
+		.bio{
+			flex-direction:column;
+		}
+		img{
+			max-width:100%;
+		}
+	}
+}
+
+.about-drew,
+.about-vic{
+	margin:5%;
+}
+
+.bio{
+	padding: 1rem;
+	display:flex;
+	justify-content:flex-start;
+	align-items:flex-end;
+	text-align:right;
+
+	h2{
+		color:$green;
+		font-size: 4.8rem;
+	}
+	h3{
+		color:$grey;
+		font-family: $descriptiveText;
+		font-size: 1.6rem;
+		text-transform: uppercase;
+	}
+	p{
+		color:$otherGrey;
+		font-family: $descriptiveText;
+		font-size: 1.8rem;
+	}
+}
+
+.bio-socials{
+	display:flex;
+	align-self:flex-end;
+	a{
+		color:black;
+		font-size: 2.4rem;
+		padding:3px;
+	}
+}
+
+.about-vic{
+	.bio{
+		text-align:left;
+		align-items: flex-start;
+		.bio-socials{
+			align-self:flex-start;
+		}
+	}
+}
+
+
+// SUPPORT STYLES
+
+.support{
+	background:linear-gradient($startColor, $endColor);
+	height:70vh;
+	display:flex;
+	.section-information{
+		width:50%;
+		display:flex;
+		color:#fff;
+		flex-direction:column;
+		margin:auto;
+		position:relative;
+		z-index: 1;
+
+		h2{
+			text-align: center;
+			font-size: 3.6rem;
+
+		}
+		p{
+			font-size: 1.4rem;
+			padding-bottom: 8rem;
+		}
+	}
+}
+
+.section-information::after{
+	content:"DONATE";
+	opacity:0.1;
+	font-size: 25rem;
+	letter-spacing: 2rem;
+	font-family: $titleText;
+	text-align: center;
+	color:black;
+	z-index:-1000;
+	position:absolute;
+	top:0;
+	left:-45%;
+}
+
+.donation-button{
+	width:24%;
+	margin:20px auto;
+	background-color:#fff;
+	font-family: $otherText;
+	text-transform: uppercase;
+	text-align: center;
+	font-size: 1.4rem;
+	letter-spacing: 1px;
+	padding:1px;
+	border-radius:50px;
+	z-index: 99;
+
+	a{
+		color:black;
+	}
+
+}
+
+// MAIN FOOTER STYLES
+
+.main-footer{
+	background:$grey;
+	color:#fff;
+}
+.footer-content .line{
+	width:100%;
+	border:2px solid $lineColorLight;
+	border-radius: 10px;
+	margin-top: 1rem;
+}
+
+.footer-content{
+	display:flex;
+	width:90%;
+	justify-content:space-between;
+	margin:auto;
+	padding: 5% 0;
+	  >div{
+	  	margin:5px;
+	  	width:calc(25% - 10px);
+	  	li{
+	  		font-size: 1.6rem;
+	  		font-family: $descriptiveText;
+	  		color:$greyText;
+	  		border-bottom: 1px solid rgba(255,255,255,0.18);
+	  		padding: 1rem;
+	  	}
+	  }
+}
+
+ul.personal-socials li {
+	border-bottom: none;
+}
+
+.news-tags{
+	.news-item{
+		margin:0;	
+	}
+	.date{
+		font-size: 1.3rem;
+		opacity:0.7;
+		padding:.5rem 0;
+		margin:0;
+	}
+}
+
+.archives{
+	span{
+	color:rgba(255,255,255,0.3);
+	font-size: 1.4rem;	
+	}
+}
+
+.base{
+	border-top: 1px solid rgba(255,255,255,0.2);
+	padding-top: 3%;
+	padding-bottom: 3%;
+	width:100%;
+	display:flex;
+	justify-content:space-around;
+	align-items:center;
+	.footer-logo-container{
+		display:flex;
+		height:100px;
+		flex-direction:column;
+		justify-content:space-between;
+	}
+	ul{
+		display:flex;
+		a{
+			color:$greyText;		
+		}
+	}
+}
+
+.footer-nav{
+	a{
+		font-size: 1.2rem;
+		padding:5px;
+	}
+}
+
+.footer-socials{
+	font-size: 2.4rem;
+	a{
+		padding:1rem;
+	}
+}
+
+.follow-person{
+	display:flex;
+	align-items:center;
+	flex-wrap:wrap;
+	h2{
+		color:$green;
+		width:100%;
+		margin:0;
+	}
+	p{
+		color:$greyText;
+		margin:0;
+	}
+}
+
+.personal-socials{
+	display:flex;
+	i{
+		color:#fff;
+	}
+}
+
+.copyright{
+	text-align: center;
+	padding:0;
+	margin:0;
+	color:$greyText;
+}
+
+
+// HOVER STATES
+	
+	nav li{
+		transition:all .3s ease;
+	}
+	.hero-nav li:hover{
+		border-bottom: 2px solid $green;
+	}
+
+	.footer-nav li:hover{
+		border-bottom: 2px solid $green;
+	}
+
+	nav li.special:hover{
+		border-bottom: 2px solid white;
+		background: $green;
+	}
+
+	.hero-socials li a:hover,
+	.footer-socials li a:hover{
+		color:$green;
+		border-bottom: none;
+	}
+	
+	.subscribe-button{
+		transition:all .5s ease;
+	}
+	.subscribe-button:hover{
+		color:$green;
+		background: white;
+	}
+
+	.load-more{
+		transition:all .5s ease;
+
+	}
+
+	.load-more:hover{
+		color:$green;
+	}
+
+	.bio-socials li{
+		transition: all .5s ease;
+	}
+	.bio-socials li a:hover{
+		font-size: 3rem;
+	} 
+
+	.donation-button{
+		transition:all .5s ease;
+	}
+
+	.donation-button:hover{
+		width:60%;
+	}
+
+
+
+// MEDIA QUERIES
+
+@media (max-width:1040px){
+	.section-information::after{
+		font-size: 17rem;
+		top:18%;
+		right:-26%;
+	}
+}
+
+@media (max-width: 940px){
+	.section-information::after{
+		font-size: 16rem;
+		top:15%;
+		right:-40%;
+	}
+	.episode-selection{
+		flex-direction:column;
+	}
+
+}
+
+@media (max-width:840px){
+
+	.episode-selection {
+		width:75%;
+		li{
+			width:97%;
+		}
+	}
+
+	.load-more{
+		width:75%;
+	}
+
+}
+
+@media(max-width: 768px){
+
+	ul.browse-wrapper .episode-selection li.grid-item{
+		margin: 1rem auto;
+	}
+	div.hero-content{
+		// display:flex;
+		justify-content:space-around;
+	}
+
+	.site-description p{
+		padding-top: 0;
+		margin-top: 0;
+	}
+	.hero-two{
+		display:flex;
+		flex-direction:row;
+		flex-wrap:wrap;
+	}
+
+	.hero-one{
+		padding:2rem;
+		.subscribe-button{
+			width:43%;
+		}
+		p.live,
+		p.episode-description{
+			padding: 2rem 0;
+		}
+	}
+	.support .section-information {
+		width:100%;
+		p{
+			padding: 2rem;
+		}
+	}
+	.section-information::after{
+		font-size: 16rem;
+		left:0;
+		top:30%;
+	}
+	.episode-selection{
+		margin:auto;
+	}
+	.about-vic,
+	.about-drew{
+		margin:0;
+		padding:2rem;
+	}
+	.footer-content{
+		flex-wrap:wrap;
+		>div{
+			margin:5px;
+	  		width:calc(50% - 10px);
+	  		h2:not(.person-name){
+	  			text-align: center;
+	  		}
+		}
+	}
+}
+
+
+
+@media(max-width:686px){
+
+	.hero-one{
+		.site-description{
+			padding-top: 2rem;
+			p{
+				margin:0;
+				padding:.5rem;
+				color:#fff;
+			}
+		}
+	}
+	.hero-two{
+		.ep-title{
+			color:$greyText;
+		}
+		.ep-description{
+			padding:0;
+			margin:0;
+		}
+		h2{
+			padding:0;
+			margin:0;
+		}
+		.ep-info{
+			width:100%;
+			align-items:space-between;
+		}
+	}
+
+	.hero1-flex-container{
+		margin:0;
+		padding:3rem 0;
+		div.subscribe-button{
+			a{
+				font-size: 1.2rem;
+				padding:0 2rem;
+				margin:0 2rem;
+			}
+		}
+		p.subscribe{
+			font-size: 1.2rem;
+		}
+	}
+
+	.section-information::after{
+		display:none;
+	}
+
+	.footer-content{
+		>div{
+			width:100%;
+		}
+	}
+	ul.hero-nav{
+		display:none;
+		position:fixed;
+		background: rgba(16,23,16,0.5);
+		top:0;
+		left:0;
+		z-index: 9999;
+		box-shadow:1px 1px 13px rgba(26,23,26,1);
+		li.special{
+			border:none;
+			margin-left: 0;
+			padding-left: 1rem;
+		}
+		li{
+			text-align: left;
+			font-size: 1.5rem;
+			a{
+				color:#fff;
+				transition: all .2s ease;
+				font-weight: bold; 
+			}
+			a:hover{
+				border-bottom: 3px solid $green;
+			}
+		}
+
+	}
+	nav .hamburger{
+		display:block;
+		text-align: center;
+	}
+
+	nav.footer-nav{
+		display:none;
+	}
+
+	.base{
+		display:flex;
+		justify-content:space-between;
+		.footer-socials{
+			padding:2rem;
+		}
+		.footer-logo-container{
+			padding:3rem;
+		}
+	}
+
+}
+
+@media(max-width:480px){
+	
+	.hero div.crown{
+		flex-direction:row;
+		justify-content:space-between;
+		padding: 3px 5px;
+		margin-top: 3px 5px;
+	}
+	.hero-content{
+		padding:0;
+		margin:0;
+		flex-wrap:wrap;
+		.hero-one, .hero-two{
+			width:100%;
+		}
+		.hero-one .site-description{
+			font-size: 1.8rem;
+		}
+	}
+
+	.browse-episodes .section-start h2,
+	.browse-episodes .section-start form{
+		padding-left:0;
+	}
+
+	.site-description p{
+		color:#fff;
+		padding: 1rem 0;
+
+	}
+
+	.hero-two{
+		p.ep-description{
+			font-size: 1.4rem;
+			padding:1rem;
+		}
+		h2.ep-title{
+			font-size: 2.3rem;
+			padding:1rem;
+		}
+		.ep-info p{
+			font-size: 1.3rem;
+		}
+	}
+
+	.hero-one p.live{
+		padding: 1rem;
+
+	}
+	.hero1-flex-container{
+		padding:1rem;
+		margin:0 auto;
+		.subscribe-button{
+			padding:.5rem;
+		}
+	}	
+	
+	.about-vic,
+	.about-drew{
+		display:flex;
+		flex-direction:column;
+	}
+
+	.about-drew .bio{
+		order:-1;
+	}
+
+	.episode-selection{
+		width:96%;
+	}
+	
+	.load-more{
+		width:78%;
+	}
+
+	.grid-item{
+		width:100%;
+		.guide{
+			width:100%;
+		}
+	}
+
+	.base{
+		flex-direction:column;
+		align-items:center;
+		.footer-socials{
+			padding:1rem;
+		}	
+	}
+
+	.donation-button{
+		border-radius: 10px;
+	}
+	
+	.episode-selection li .guide{
+		width:100%;
+	}
+
+	.section-start h2{
+		padding-right: 37%;
+	}
+}
+
+@media (max-width:375px){
+	.hero1-flex-container{
+	
+		.subscribe-button{
+			margin-left: 0;
+			width:34%;
+			p{
+				font-size: .9rem;
+			}
+		}
+		ul{
+			padding-left: 4rem;
+			i{
+				font-size: 2rem;
+			}
+			
+		}
+		.subscribe-button{
+
+		}
+	}
+
+	p.ep-description{
+		display:none;
+	}
+}
+
+@media (max-width: 350px){
+	.support .section-information{
+		h2{
+			padding-bottom: 1rem;
+			margin-bottom: 1rem;
+		}
+		p{
+			padding-top: 0;
+			margin-top: 0;
+		}
+	}
+
+	.episode-selection{
+		width:100%;
+	}
+
+
+}
+
+@media (max-width: 320px) {
+	.hero-one{
+		padding:1rem 0 0 0;
+	}
+	.site-description p{
+		font-size: 2.3rem;
+
+	}
+	.site-description p.live{
+		padding-bottom: 3rem;
+		opacity:0.5;
+	}
+
+	.line{
+		margin-top: 0;
+	}
+
+	.hero-two{
+		h2.ep-title{
+		font-size: 1.8rem;
+		color:#fff;
+	}
+	}
+
+	.ep-info p{
+		margin:0;
+		padding:5px 0;
+	}
+}
+
